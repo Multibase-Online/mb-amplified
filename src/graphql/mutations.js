@@ -13,6 +13,9 @@ export const createTodo = /* GraphQL */ `
       image
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -28,6 +31,9 @@ export const updateTodo = /* GraphQL */ `
       image
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -43,6 +49,9 @@ export const deleteTodo = /* GraphQL */ `
       image
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
