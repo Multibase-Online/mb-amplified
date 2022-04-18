@@ -2,7 +2,7 @@
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import React, { useEffect, useState } from 'react'
-import Amplify, { API, graphqlOperation } from 'aws-amplify'
+import Amplify, { API, graphqlOperation, Storage } from 'aws-amplify'
 import { createTodo } from './graphql/mutations'
 import { listTodos } from './graphql/queries'
 
@@ -26,13 +26,26 @@ const App = () => {
     setFormState({ ...formState, [key]: value })
   }
 
+//  async function fetchTodos() {
+//    try {
+//      const todoData = await API.graphql(graphqlOperation(listTodos))
+//      const todos = todoData.data.listTodos.items
+//      setTodos(todos)
+//    } catch (err) { console.log('error fetching todos') }
+//  }
+
   async function fetchTodos() {
-    try {
-      const todoData = await API.graphql(graphqlOperation(listTodos))
-      const todos = todoData.data.listTodos.items
-      setTodos(todos)
-    } catch (err) { console.log('error fetching todos') }
-  }
+  const todoData = await API.graphql({ query: listTodos });
+  const todos = todoData.data.listTodos.items;
+  await Promise.all(todos.map(async todo => {
+    if (todo.image) {
+      const image = await Storage.get(todo.image);
+      todo.image = image;
+    }
+    return todo;
+  }))
+  setTodos(todoData.data.listTodos.items);
+}
 
   async function addTodo() {
     try {
@@ -44,6 +57,14 @@ const App = () => {
     } catch (err) {
       console.log('error creating todo:', err)
     }
+  }
+
+  async function onChange(e) {
+  if (!e.target.files[0]) return
+  const file = e.target.files[0];
+  setFormState({ ...formState, image: file.name });
+  await Storage.put(file.name, file);
+  fetchTodos();
   }
 
   Auth.currentAuthenticatedUser({
@@ -71,12 +92,19 @@ const App = () => {
           value={formState.description}
           placeholder="Description"
         />
+        <input
+          type="file"
+          onChange={onChange}
+        />
         <button style={styles.button} onClick={addTodo}>Create Todo</button>
         {
           todos.map((todo, index) => (
             <div key={todo.id ? todo.id : index} style={styles.todo}>
               <p style={styles.todoName}>{todo.name}</p>
               <p style={styles.todoDescription}>{todo.description}</p>
+               {
+                todo.image && <img src={todo.image} style={{width: 400}} />
+               }
             </div>
           ))
         }

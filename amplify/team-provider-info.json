@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "mbamplified6d129226": {}
+        "mbamplified6d129226": {},
+        "true": {}
       },
       "hosting": {
         "amplifyhosting": {

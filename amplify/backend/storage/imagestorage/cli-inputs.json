@@ -2,13 +2,16 @@
   "resourceName": "imagestorage",
   "policyUUID": "cfe1827a",
   "bucketName": "mbamplified6b56a6e70af74d2186d5f087fc71153f",
-  "storageAccess": "auth",
-  "guestAccess": [],
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
   "authAccess": [
     "CREATE_AND_UPDATE",
     "READ",
     "DELETE"
   ],
-  "triggerFunction": "NONE",
   "groupAccess": {}
 }
