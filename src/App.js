@@ -8,6 +8,8 @@ import { listTodos } from './graphql/queries'
 
 import awsExports from "./aws-exports";
 
+// test
+
 import { Auth } from 'aws-amplify';
 
 Amplify.configure(awsExports);
