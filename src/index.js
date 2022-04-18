@@ -8,6 +8,7 @@ import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
 //adding random comment
+///another random comment
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
