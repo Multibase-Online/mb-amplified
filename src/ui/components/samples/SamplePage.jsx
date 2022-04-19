@@ -31,18 +31,13 @@ export default function SamplePage() {
         <Grid item xs={12}>
           <Box className={classes.boxStyle}>
             <Typography variant="h6" component="h1">Job Number: 1234</Typography>
-            <Button variant="contained" color="secondary">Add Sample</Button>
+            <Button variant="contained" color="primary">Create report</Button>
           </Box>
         </Grid>
         <Grid item xs={12}>
           <Box>
             <TabPane/>
           </Box>
-        </Grid>
-        <Grid item xs={3}>
-        </Grid>
-        <Grid item xs={9}>
-          <Paper className={classes.paper}>Sample Viewer Pane</Paper>
         </Grid>
       </Grid>
     </div>

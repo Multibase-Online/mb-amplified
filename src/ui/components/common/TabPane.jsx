@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
+import Grid from '@mui/material/Grid';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -53,10 +54,21 @@ export default function BasicTabs() {
           <Tab label="Samples" {...a11yProps(0)} />
           <Tab label="Details" {...a11yProps(1)} />
           <Tab label="Caveats" {...a11yProps(2)} />
+          <Tab label="Objectives" {...a11yProps(3)} />
+          <Tab label="Notes" {...a11yProps(4)} />
+          <Tab label="Techniques" {...a11yProps(5)} />
+          <Tab label="Summaries" {...a11yProps(6)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
+      <Grid container>
+      <Grid item xs={3}>
       <SampleView/>
+      </Grid>
+      <Grid item xs={9}>
+        put sample info in here
+      </Grid>
+      </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
