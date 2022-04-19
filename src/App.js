@@ -13,6 +13,8 @@ import awsExports from "./aws-exports";
 
 import { Auth } from "aws-amplify";
 
+// test
+
 Amplify.configure(awsExports);
 
 const initialState = { name: "", description: "" };

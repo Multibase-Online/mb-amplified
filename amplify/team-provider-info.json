@@ -50,11 +50,11 @@
       "function": {
         "mbamplified6d129226PostConfirmation": {
           "deploymentBucketName": "amplify-mbamplified-dev-95606-deployment",
-          "s3Key": "amplify-builds/mbamplified6d129226PostConfirmation-757369506849667a5934-build.zip"
+          "s3Key": "amplify-builds/mbamplified6d129226PostConfirmation-532f372f794576794765-build.zip"
         },
         "testLambdaFunction": {
           "deploymentBucketName": "amplify-mbamplified-dev-95606-deployment",
-          "s3Key": "amplify-builds/testLambdaFunction-67736d65766c46736761-build.zip"
+          "s3Key": "amplify-builds/testLambdaFunction-4d6d742b5531334d4a67-build.zip"
         }
       }
     }
