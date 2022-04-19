@@ -11,9 +11,6 @@ import NavBar from "./ui/components/navbar/NavBar";
 
 import awsExports from "./aws-exports";
 
-// test
-// please make it build
-
 import { Auth } from "aws-amplify";
 
 Amplify.configure(awsExports);
