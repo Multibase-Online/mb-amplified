@@ -2,7 +2,7 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "mbamplified6d129226_identitypool_6d129226",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "mbampl6d129226",
     "userPoolName": "mbamplified6d129226_userpool_6d129226",
     "autoVerifiedAttributes": [
@@ -36,7 +36,7 @@
     "sharedId": "6d129226",
     "resourceName": "mbamplified6d129226",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "manual",
+    "useDefault": "default",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
@@ -54,31 +54,6 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": [
-      {
-        "category": "function",
-        "resourceName": "mbamplified6d129226PostConfirmation",
-        "triggerProvider": "Cognito",
-        "attributes": [
-          "Arn",
-          "Name"
-        ]
-      }
-    ],
-    "thirdPartyAuth": false,
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "triggers": {
-      "PostConfirmation": [
-        "custom"
-      ]
-    },
-    "hostedUI": false,
-    "authProviders": [],
-    "parentStack": {
-      "Ref": "AWS::StackId"
-    },
-    "permissions": [],
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"mbamplified6d129226PostConfirmation\"\n  }\n]"
+    "dependsOn": []
   }
 }
