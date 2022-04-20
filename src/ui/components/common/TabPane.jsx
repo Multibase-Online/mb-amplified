@@ -61,14 +61,7 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-      <Grid container>
-      <Grid item xs={3}>
       <SampleView/>
-      </Grid>
-      <Grid item xs={9}>
-        put sample info in here
-      </Grid>
-      </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

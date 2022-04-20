@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     zIndex: 2,
-    backgroundColor: '#0d1e74'
+    backgroundColor: '#012b7b'
   }
 }));
 

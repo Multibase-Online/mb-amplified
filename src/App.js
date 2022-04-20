@@ -1,21 +1,27 @@
-/* src/App.js */
-import { Authenticator } from "@aws-amplify/ui-react";
-import "@aws-amplify/ui-react/styles.css";
+///Frontend Imports
 import React, { useEffect, useState } from "react";
+import NavBar from "./ui/components/navbar/NavBar";
+import { Route, Routes } from "react-router-dom";
+import SamplePage from "./ui/components/samples/SamplePage";
+import { createTheme, ThemeProvider } from "@material-ui/core";
+//Backend Imports
+import awsExports from "./aws-exports";
+import { Auth } from "aws-amplify";
 import Amplify, { API, graphqlOperation, Storage } from "aws-amplify";
 import { createTodo } from "./graphql/mutations";
 import { listTodos } from "./graphql/queries";
-import { Route, Routes } from "react-router-dom";
-import SamplePage from "./ui/components/samples/SamplePage";
-import NavBar from "./ui/components/navbar/NavBar";
-
-import awsExports from "./aws-exports";
-
-import { Auth } from "aws-amplify";
-
-// test
+import { Authenticator } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
 
 Amplify.configure(awsExports);
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#012b7b',
+    },
+  },
+});
 
 const initialState = { name: "", description: "" };
 
@@ -81,17 +87,13 @@ const App = () => {
     .catch((err) => console.log(err));
 
   return (
-    <div>
-    <NavBar/>
-    <Routes>
-    {/* <Authenticator> */}
-        <Route
-          path="/samples"
-          element={
-            <SamplePage/>
-          }
-        />
-      {/* {({ signOut, user }) => (
+    <ThemeProvider theme={theme}>
+      <div>
+        <NavBar />
+        <Routes>
+          {/* <Authenticator> */}
+          <Route path="/samples" element={<SamplePage />} />
+          {/* {({ signOut, user }) => (
         <div style={styles.container}>
           <h1>Hello {user.username}</h1>
           <button style={styles.button} onClick={signOut}>
@@ -126,8 +128,9 @@ const App = () => {
         </div>
       )}
     </Authenticator> */}
-    </Routes>
-    </div>
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 };
 
