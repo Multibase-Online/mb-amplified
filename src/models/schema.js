@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "UserTable": {
-            "name": "UserTable",
+        "User": {
+            "name": "User",
             "fields": {
                 "id": {
                     "name": "id",
@@ -42,7 +42,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "UserTables",
+            "pluralName": "Users",
             "attributes": [
                 {
                     "type": "model",
@@ -142,5 +142,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "5e74c89bf2e9a1af8417f12ef14c7f76"
+    "version": "6b18bb7d8836e0e295b90665c8bc5cda"
 };
