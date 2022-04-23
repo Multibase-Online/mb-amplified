@@ -91,9 +91,10 @@ const App = () => {
       <div>
         <NavBar />
         <Routes>
-          {/* <Authenticator> */}
-          <Route path="/samples" element={<SamplePage />} />
-          {/* {({ signOut, user }) => (
+          <Route path="/job" element={<SamplePage />} />
+          </Routes>
+          <Authenticator> 
+          {({ signOut, user }) => (
         <div style={styles.container}>
           <h1>Hello {user.username}</h1>
           <button style={styles.button} onClick={signOut}>
@@ -127,8 +128,7 @@ const App = () => {
      
         </div>
       )}
-    </Authenticator> */}
-        </Routes>
+    </Authenticator>
       </div>
     </ThemeProvider>
   );

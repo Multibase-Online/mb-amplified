@@ -30,7 +30,7 @@ export default function SamplePage() {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Box className={classes.boxStyle}>
-            <Typography variant="h5" component="h1">Job: 1234</Typography>
+            <Typography variant="h5" component="h1">Job: J1H23G3 </Typography>
             <Button variant="contained" color="primary">Create report</Button>
           </Box>
         </Grid>
